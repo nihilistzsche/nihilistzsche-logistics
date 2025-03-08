@@ -1,0 +1,13 @@
+{
+  "name": "lane-balancers-advancedbelts",
+  "version": "0.0.3",
+
+  "title": "Lane Balancers for AdvancedBelts",
+  "description": "Adds the hidden lane balancers from Factorio 2.0 for AdvancedBelts",
+
+  "author": "nihilistzsche",
+  "license": "GPL3",
+
+  "dependencies": ["base >= 1.1.6", "lane-balancers", "AdvancedBeltsSA"],
+  "factorio_version": "2.0"
+}
