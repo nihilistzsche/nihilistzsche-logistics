@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 2025-03-14
+  Changes:
+    - Moved the Wood Logistics/AAI Loaders Sane compatibility to data-final-fixes as it doesn't
+      seem to work in data-updates.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 2025-03-14
+  Changes:
+    - Renamed to nihilistzsche-logistics as it does more than just lane balancers now.
+    - If Wooden Logistics is enabled replaces the Transport Belt ingredient in the yellow Lane
+      Balancer with Wooden Lane Balancers.
+    - If AAI Loaders is installed, will set the Wooden Loader as an ingredient for the yellow
+      Loader.
+    - If AAI Loaders Sane is installed, will move the Wooden Loader to the normal Wooden Logistics
+      techonology unlock to match what Sane does.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.4
+Date: 2025-03-13
+  Changes:
+    - Added support for Wooden Logistics from SafTheLamb.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.3
 Date: 2025-03-08
   Changes:

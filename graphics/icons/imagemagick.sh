@@ -1,4 +1,4 @@
-tiers="extreme- high-speed- ultimate-"
+tiers="extreme- high-speed- ultimate- wood-"
 
 for tier in $tiers
 do
