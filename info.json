@@ -1,6 +1,6 @@
 {
   "name": "nihilistzsche-logistics",
-  "version": "0.0.6",
+  "version": "0.0.7",
 
   "title": "Nihilistzsche Logistics",
   "description": "Adds the hidden lane balancers for AdvancedBeltsSA and Wooden Logistics as well as has some compatibility for some other logistic mods.",
@@ -8,6 +8,6 @@
   "author": "nihilistzsche",
   "license": "GPL3",
 
-  "dependencies": ["base >= 2.0.32", "lane-balancers", "AdvancedBeltsSA", "? wood-logistics", "? aai-loaders", "? aai-loaders-sane" ],
+  "dependencies": ["base >= 2.0.32", "lane-balancers", "AdvancedBeltsSA", "? wood-logistics", "? aai-loaders", "? aai-loaders-sane", "? aai-loaders-stacking-filtering" ],
   "factorio_version": "2.0"
 }
