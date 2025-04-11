@@ -25,16 +25,17 @@ if mods["aai-loaders-sane"] then
                 and string.find(tech.name, "loader")
                 and (string.find(tech.name, "stacking") or string.find(tech.name, "filtering"))
             then
-                local base_name = tech.name:gsub(
-                    "%S+",
-                    { ["-stacking"] = "", ["-stacking-lane-filtering"] = "", ["-lane-filtering"] = "" }
-                )
-                data.raw.technology[tech.name] = nil
-                for _, _tech in pairs(data.raw.technology) do
-                    if _tech.effects then
-                        for _, effect in pairs(_tech.effects) do
-                            if effect.type == "unlock-recipe" and effect.recipe == base_name then
-                                table.insert(_tech.effects, { type = "unlock-recipe", recipe = tech.name })
+                for i, prereq in pairs(tech.prerequisites) do
+                    if not data.raw.technology[prereq] then
+                        local base_name = tech.name:sub(1, tech.name:len() - 9)
+                        for _, _tech in pairs(data.raw.technology) do
+                            if _tech.effects then
+                                for _, effect in pairs(_tech.effects) do
+                                    if effect.type == "unlock-recipe" and effect.recipe == base_name then
+                                        log(_tech.name)
+                                        tech.prerequisites[i] = _tech.name
+                                    end
+                                end
                             end
                         end
                     end
