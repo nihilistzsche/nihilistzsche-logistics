@@ -18,9 +18,10 @@ if mods["wood-logistics"] then
     end
 end
 if mods["aai-loaders-stacking-filtering"] then
-    local Stacking = require("prototypes.stacking")
-    local LaneFiltering = require("prototypes.lane_filtering")
-    local make_stacking_lane_filtering = require("prototypes.stacking_lane_filtering")
+    local NLStacking = require("prototypes.stacking")
+    local NLLaneFiltering = require("prototypes.lane_filtering")
+    local make_stacking_lane_filtering =
+        require("__aai-loaders-stacking-filtering__.prototypes.stacking_lane_filtering")
 
     local has_stack_inserter = feature_flags["space_travel"]
         and (data.raw["inserter"]["stack-inserter"] and true or false)
@@ -38,7 +39,7 @@ if mods["aai-loaders-stacking-filtering"] then
         if mods["aai-loaders-sane"] and loader_type ~= "wood" then tech_override = loader_type .. "-logistics" end
         if enable_stacking then
             data:extend(
-                Stacking.make_stacking(
+                NLStacking.make_stacking(
                     table.deepcopy(data.raw["loader-1x1"]["aai-" .. loader_type .. "-loader"]),
                     table.deepcopy(data.raw["item"]["aai-" .. loader_type .. "-loader"]),
                     enable_stacking_lane_filtering,
@@ -48,7 +49,7 @@ if mods["aai-loaders-stacking-filtering"] then
         end
         if enable_lane_filtering then
             data:extend(
-                LaneFiltering.make_lane_filtering(
+                NLLaneFiltering.make_lane_filtering(
                     table.deepcopy(data.raw["loader-1x1"]["aai-" .. loader_type .. "-loader"]),
                     table.deepcopy(data.raw["item"]["aai-" .. loader_type .. "-loader"]),
                     nil,
@@ -60,8 +61,7 @@ if mods["aai-loaders-stacking-filtering"] then
             data:extend(
                 make_stacking_lane_filtering(
                     table.deepcopy(data.raw["loader-1x1"]["aai-" .. loader_type .. "-loader"]),
-                    table.deepcopy(data.raw["item"]["aai-" .. loader_type .. "-loader"]),
-                    tech_override
+                    table.deepcopy(data.raw["item"]["aai-" .. loader_type .. "-loader"])
                 )
             )
         end
